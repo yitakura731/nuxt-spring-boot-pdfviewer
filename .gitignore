@@ -1,0 +1,17 @@
+/.vscode
+/RemoteSystemsTempFiles
+/.metadata/
+/.recommenders/
+PythonSvc/src/__pycache__/*
+JavaSvc/.gradle/*
+JavaSvc/.settings/*
+JavaSvc/bin/*
+JavaSvc/data/*
+JavaSvc/build/*
+JavaSvc/.classpath
+JavaSvc/.project
+Proto/.project
+NuxtSvc/.vscode
+NuxtSvc/.nuxt
+NuxtSvc/node_modules
+NuxtSvc/dist

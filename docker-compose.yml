@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+  javasvc:
+    image: yitakura731/myapp-javasvc
+    build:
+      context: ./JavaSvc/
+      dockerfile: Dockerfile
+    container_name: javasvc
+    environment:
+      - STORAGE_ROOT=/data
+      - PYSERVICE_HOST=pysvc
+      - PYSERVICE_PORT=50051
+    volumes:
+      - /MyDemoApp/JavaSvc/data:/data
+    ports:
+      - "8080:8080"
+    
+  websvc:
+    image: yitakura731/myapp-nuxtsvc
+    build:
+      context: ./NuxtSvc/
+      dockerfile: Dockerfile
+    container_name: nuxtsvc
+    environment:
+      - REPOSITORY_URL=http://javasvc:8080
+    ports:
+      - "3002:3002"
